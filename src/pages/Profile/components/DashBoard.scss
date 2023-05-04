@@ -1,0 +1,33 @@
+@import '../../../default.scss';
+
+.dashboard{
+    width:90%;
+    height:100%;
+    display:flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.data{
+
+    width:33%;
+    height:80%;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bold;
+    gap:1%;
+}
+.dashboard_top{
+
+    height:80%;
+    width:90%;
+    display:flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap:15%;
+    flex-direction: row; 
+}
+

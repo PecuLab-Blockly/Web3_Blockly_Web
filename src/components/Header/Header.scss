@@ -1,0 +1,124 @@
+@import '../../default.scss';
+
+header{
+    background:$blue;
+    top:0;
+    height:5vw;
+    position:absolute;
+    width:100%;
+    line-height: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+
+/* 會員管理清單樣式 */
+.member-list {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    width:20%;
+    padding: 5px 10px;
+    margin-right: 5%;
+    margin-top: 2.5%;
+    transform: translateY(-50%);
+    display: flex;
+    list-style: none;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+
+  }
+  .member-list a{
+    width:100%;
+    color: black;
+    text-decoration: none;
+    padding: 5px 10px;
+line-height: 2.5;
+    font-size: 16px;
+    display: block;
+  }
+
+
+  .member-item {
+    width:100%;
+    position: relative;
+    flex-direction: row;
+    display: flex;
+  }
+  
+  .member-item > a {
+    width:100%;
+    color: black;
+    text-decoration: none;
+    padding: 5px 10px;
+line-height: 1.5;
+    font-size: 14px;
+    display: block;
+  }
+  
+  .member-dropdown {
+    width:100%;
+    position: absolute;
+    top: 110%;
+    right: 0;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    z-index: 99;
+    display: none;
+    padding: 0;
+ 
+  }
+  
+  .member-list:hover .member-dropdown {
+    display: block;
+    width:100%;
+  }
+  
+  .member-dropdown div {
+    display: block;
+  }
+  
+  .member-dropdown div > a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+  }
+  
+  .member-dropdown div > a:hover {
+    background-color: $blue;
+    color:white;
+    border-radius: 20px;
+    width:90%
+  }
+  
+  // 搜尋框
+  .search-box {
+    float: right;
+    margin-right: 50px;
+    margin-top: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    height: 30px;
+    width: 20%;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-box input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .search-box input::placeholder {
+    color: white;
+  }
