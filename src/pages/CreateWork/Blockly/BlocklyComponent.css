@@ -1,0 +1,14 @@
+#blocklyDiv {
+  height: 95%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+.run {
+  margin: auto;
+  display: flex;
+  /* background-color: #ff7878;
+  color: #fff;
+  border: #fff; */
+  font-size: 16px;
+}
