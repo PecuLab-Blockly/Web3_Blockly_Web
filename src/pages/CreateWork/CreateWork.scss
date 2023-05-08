@@ -1,0 +1,14 @@
+@import '../../default.scss';
+.createWork_container{
+    position:absolute;
+    top:20%;
+    height:100%;
+    width:100%;
+    padding-bottom: 10%;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    display:flex;
+    gap:10%;
+    border:1px solid black
+}

@@ -1,8 +1,9 @@
-import './Home.scss';
-import {useState, useEffect, useCallback} from 'react';
-import Header from '../../components/Header';
-import WorkSquare from '../../components/WorkSquare';
-import useMouseY from '../../utils/useMouseY';
+import "./Home.scss";
+import { useState, useEffect, useCallback } from "react";
+import Header from "../../components/Header";
+import WorkSquare from "../../components/WorkSquare";
+import useMouseY from "../../utils/useMouseY";
+import { Link } from "react-router-dom";
 
 function Home() {
   const [showArrow, setShowArrow] = useState(false);
@@ -31,7 +32,7 @@ function Home() {
           <div className="home_column_one_left">
             <div className="title">
               <div className="title_square_one">
-                <div style={{marginLeft: '6%', width: '18%'}} className="h2">
+                <div style={{ marginLeft: "6%", width: "18%" }} className="h2">
                   最近的設計
                 </div>
               </div>
@@ -42,36 +43,34 @@ function Home() {
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
-              {showArrow && (
-                <div className="arrow_circle top"></div>
-              )}
+              {showArrow && <div className="arrow_circle top"></div>}
               <WorkSquare></WorkSquare>
               <WorkSquare></WorkSquare>
               <WorkSquare></WorkSquare>
             </div>
           </div>
           <div className="home_column_one_right">
-            <button className="button red">快速建立blockly</button>
+            <button className="button red">
+              <Link to="/createWork">快速建立blockly</Link>
+            </button>
             <button className="button yellow">快速發行NFT</button>
           </div>
         </div>
         <div className="home_column two">
           <div className="title">
             <div className="title_square">
-              <div style={{marginLeft: '4%', width: '10%'}} className="h2">
+              <div style={{ marginLeft: "4%", width: "10%" }} className="h2">
                 熱門項目
               </div>
             </div>
           </div>
           <div
-              className="work_display"
-              id="NextButton"
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-            >
-              {showArrow && (
-                <div className="arrow_circle below"></div>
-              )}
+            className="work_display"
+            id="NextButton"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            {showArrow && <div className="arrow_circle below"></div>}
             <WorkSquare></WorkSquare>
             <WorkSquare></WorkSquare>
             <WorkSquare></WorkSquare>
