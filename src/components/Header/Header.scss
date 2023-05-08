@@ -78,7 +78,16 @@ line-height: 1.5;
   }
   
   .member-dropdown div {
-    display: block;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    &:hover{
+      background-color: $blue;
+    color:white;
+    border-radius: 20px;
+    width:100%
+    }
   }
   
   .member-dropdown div > a {
@@ -86,14 +95,16 @@ line-height: 1.5;
     padding: 10px;
     text-decoration: none;
     color: black;
-  }
-  
-  .member-dropdown div > a:hover {
-    background-color: $blue;
+    &:hover{
+      background-color: $blue;
     color:white;
     border-radius: 20px;
-    width:90%
-  }
+    width:100%
+    }
+    }
+  
+  
+  
   
   // 搜尋框
   .search-box {

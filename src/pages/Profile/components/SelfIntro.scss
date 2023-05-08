@@ -2,9 +2,11 @@
 
 button{
     margin-top: 1%;
+    width:15%;
+    height:8%;
         background-color:$blue;
         border:0px;
-        border-radius: 14px;
+        border-radius: 10px;
         color:white;
         font-weight: bold;
         &:hover{
