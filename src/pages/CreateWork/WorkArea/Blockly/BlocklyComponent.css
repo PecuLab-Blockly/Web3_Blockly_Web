@@ -1,14 +1,7 @@
-#blocklyDiv {
-  height: 95%;
-  width: 100%;
+.blocklyDiv {
+  height: 70%;
+  width: 70%;
   position: absolute;
-  bottom: 0;
-}
-.run {
-  margin: auto;
-  display: flex;
-  /* background-color: #ff7878;
-  color: #fff;
-  border: #fff; */
-  font-size: 16px;
+  top: 5%; 
+  right: 1%;
 }

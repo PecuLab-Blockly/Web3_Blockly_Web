@@ -23,7 +23,7 @@
 
 import React from 'react';
 import './BlocklyComponent.css';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import Blockly from 'blockly/core';
 import { javascriptGenerator } from 'blockly/javascript';
@@ -37,12 +37,16 @@ function BlocklyComponent(props) {
     const toolbox = useRef();
     let primaryWorkspace = useRef();
 
+    // const [codeResult, setCodeResult] = useState('');
+
     const generateCode = () => {
         var code = javascriptGenerator.workspaceToCode(
             primaryWorkspace.current
         );
         console.log(code);
-        eval(code);
+        // 執行程式
+        // eval(code);
+        props.onValueChange(code);
     }
 
     useEffect(() => {
@@ -62,8 +66,8 @@ function BlocklyComponent(props) {
 
     return (
         <React.Fragment>
-            <button onClick={generateCode} className="run">Run</button>
-            <div ref={blocklyDiv} id="blocklyDiv" />
+            <button onClick={generateCode}>Run</button>
+            <div ref={blocklyDiv} className="blocklyDiv" />
             <div style={{ display: 'none' }} ref={toolbox}>
                 {props.children}
             </div>
