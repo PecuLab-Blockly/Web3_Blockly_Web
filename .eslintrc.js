@@ -1,24 +1,19 @@
 module.exports = {
-  'env': {
-    'browser': true,
-    'es2021': true,
+  env: {
+    browser: true,
+    es2021: true
   },
-  'extends': [
-    'plugin:react/recommended',
-    'google',
-    'prettier'
-  ],
-  'overrides': [
-  ],
-  'parserOptions': {
-    'ecmaVersion': 'latest',
-    'sourceType': 'module',
+  extends: ['plugin:react/recommended', 'eslint:recommended'],
+  overrides: [],
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module'
   },
-  'plugins': [
-    'react',
-  ],
-  'rules': {
-    'proposal/class-property-semi': ['error', 'never'],
+  plugins: ['react'],
+  rules: {
+    'react/prop-types': 0,
+    'react/jsx-uses-react': 'error',
+    'react/jsx-uses-vars': 'error',
     indent: ['error', 2, { SwitchCase: 1 }],
     'linebreak-style': ['error', 'unix'],
     quotes: ['error', 'single'],
@@ -34,15 +29,18 @@ module.exports = {
     camelcase: 'error',
     'new-cap': 'error',
     'space-before-blocks': 'error',
-    'space-before-function-paren': ['error', {
-      anonymous: 'never',
-      named: 'never',
-      asyncArrow: 'always'
-    }],
+    'space-before-function-paren': [
+      'error',
+      {
+        anonymous: 'never',
+        named: 'never',
+        asyncArrow: 'always'
+      }
+    ],
     'no-unused-vars': 'off',
     'no-unreachable': 'error',
     'computed-property-spacing': ['error', 'never'],
     curly: ['error', 'all'],
     'no-unneeded-ternary': 'error'
-  },
-};
+  }
+}

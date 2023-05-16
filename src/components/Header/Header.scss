@@ -1,135 +1,217 @@
 @import '../../default.scss';
 
-header{
-    background:$blue;
-    top:0;
-    height:5vw;
-    position:absolute;
-    width:100%;
-    line-height: 80%;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+header {
+  background: $blue;
+  top: 0;
+  height: 5vw;
+  position: absolute;
+  width: 100%;
+  line-height: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-
 
 /* 會員管理清單樣式 */
 .member-list {
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 10px;
-    width:20%;
-    padding: 5px 10px;
-    margin-right: 5%;
-    margin-top: 2.5%;
-    transform: translateY(-50%);
-    display: flex;
-    list-style: none;
-    font-weight: bold;
-    justify-content: center;
-    align-items: center;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  width: 20vw;
+  padding: 5px 10px;
+  margin-right: 5%;
+  display: flex;
+  list-style: none;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+.member-list a {
+  width: 100%;
+  color: black;
+  text-decoration: none;
+  padding: 5px 10px;
+  line-height: 2.5;
+  font-size: 16px;
+  display: block;
+}
 
-  }
-  .member-list a{
-    width:100%;
-    color: black;
-    text-decoration: none;
-    padding: 5px 10px;
-line-height: 2.5;
-    font-size: 16px;
-    display: block;
-  }
+.member-item {
+  width: 100%;
+  position: relative;
+  flex-direction: row;
+  display: flex;
+}
 
+.member-item > a {
+  width: 100%;
+  color: black;
+  text-decoration: none;
+  padding: 5px 10px;
+  line-height: 1.5;
+  font-size: 14px;
+  display: block;
+}
 
-  .member-item {
-    width:100%;
-    position: relative;
-    flex-direction: row;
-    display: flex;
-  }
-  
-  .member-item > a {
-    width:100%;
-    color: black;
-    text-decoration: none;
-    padding: 5px 10px;
-line-height: 1.5;
-    font-size: 14px;
-    display: block;
-  }
-  
-  .member-dropdown {
-    width:100%;
-    position: absolute;
-    top: 110%;
-    right: 0;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    z-index: 99;
-    display: none;
-    padding: 0;
- 
-  }
-  
-  .member-list:hover .member-dropdown {
-    display: block;
-    width:100%;
-  }
-  
-  .member-dropdown div {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    &:hover{
-      background-color: $blue;
-    color:white;
-    border-radius: 20px;
-    width:100%
-    }
-  }
-  
-  .member-dropdown div > a {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    color: black;
-    &:hover{
-      background-color: $blue;
-    color:white;
-    border-radius: 20px;
-    width:100%
-    }
-    }
-  
-  
-  
-  
-  // 搜尋框
-  .search-box {
-    float: right;
-    margin-right: 50px;
-    margin-top: 10px;
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 10px;
-    height: 30px;
-    width: 20%;
-    padding: 5px 10px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .search-box input {
-    border: none;
-    outline: none;
-    background-color: transparent;
-    width: 100%;
-    height: 100%;
-    font-size: 16px;
-    color: #333;
-  }
-  
-  .search-box input::placeholder {
+.member-dropdown {
+  width: 100%;
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  z-index: 99;
+  display: none;
+  padding: 0;
+}
+
+.member-list:hover .member-dropdown {
+  display: block;
+  width: 100%;
+}
+
+.member-dropdown div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  &:hover {
+    background-color: $blue;
     color: white;
+    border-radius: 20px;
+    width: 100%;
   }
+}
+
+.member-dropdown div > a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+  &:hover {
+    background-color: $blue;
+    color: white;
+    border-radius: 20px;
+    width: 100%;
+  }
+}
+
+// 搜尋框
+.search-box {
+  float: right;
+  margin-right: 50px;
+
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  height: 30px;
+  width: 20%;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  color: #333;
+}
+
+.search-box input::placeholder {
+  color: white;
+}
+
+.createHeader_button {
+  background-color: transparent;
+  width: 5vw;
+  height: 30%;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+}
+.work-name-box {
+  height: 3vw;
+  width: fit-content;
+  max-width: 30%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 1vw;
+  filter: drop-shadow(0px 4px 5px rgba(248, 102, 118, 1));
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.2); // 底色透明
+  color: white; // 文字顏色
+  font-size: 1rem;
+  font-weight: bold;
+  outline: none; // 移除聚焦時的外框
+  text-align: right;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:hover,
+  &:focus {
+    box-shadow: 1px;
+    border: 2px solid $red;
+  }
+}
+
+.NFT-button {
+  margin: 0 auto;
+  background-color: $red;
+  color: white;
+  height: 3vw;
+  width: 8vw;
+  &:hover {
+    background-color: $red-hover;
+  }
+}
+.createHeader-left {
+  width: 18%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.edit-button-group {
+  border-right: 0.5px solid white;
+  border-left: 0.5px solid white;
+  width: 7vw;
+  padding-left: 4px;
+  padding-right: 4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.createHeader-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  width: 20%;
+  gap: 10%;
+
+  margin-right: 5%;
+}
+.createHeader-container {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  justify-content: space-between;
+}
+.createHeader_button {
+  width: 30%;
+  height: 3vw;
+  margin: auto;
+  background: 'transparent';
+  border: 'none';
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}

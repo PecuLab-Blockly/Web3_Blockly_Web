@@ -1,19 +1,23 @@
-import './CreateWork.scss';
-import {useState, useEffect, useCallback} from 'react';
-import Header from '../../components/Header';
-import WorkArea from './WorkArea';
-
+import './CreateWork.scss'
+import { useState, useEffect, useCallback } from 'react'
+import CreateHeader from '../../components/Header/CreateHeader'
+import WorkArea from './WorkArea'
+import React from 'react'
 
 function CreateWork() {
-
   return (
     <div>
-      <Header></Header>
+      <CreateHeader></CreateHeader>
       <div className='createWork_container'>
-        <WorkArea/>
+        {/* <WorkArea /> */}
+        <div className='createWork_left'>
+          <div className='createWork_show'></div>
+          <div className='createWork_item'></div>
+        </div>
+        <div className='createWork_right'></div>
       </div>
     </div>
-  );
+  )
 }
 
-export default CreateWork;
+export default CreateWork
