@@ -84,7 +84,8 @@ function CreateHeader() {
 
           <div className='createHeader-right'>
             {/* 發行NFT按鈕 */}
-            <button className='NFT-button'>發行NFT</button>
+            <button className='save-button'>暫存遊戲</button>
+            <button className='NFT-button'>發行遊戲</button>
             <ul
               className='member-list'
               style={{

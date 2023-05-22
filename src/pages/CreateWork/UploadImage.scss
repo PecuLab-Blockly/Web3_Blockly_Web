@@ -1,0 +1,11 @@
+@import '../../default.scss';
+.image-name {
+  font-size: 12px;
+  outline: none; // 移除聚焦時的外框
+  margin-top: 5px;
+  &:hover,
+  &:focus {
+    box-shadow: 1px;
+    border-bottom: 0.5px solid $blue;
+  }
+}
