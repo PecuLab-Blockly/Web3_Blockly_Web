@@ -30,8 +30,8 @@ const InteractiveArea = ({ codeResult }) => {
     function drawResultText(result) {
         var svg = canvasRef.current;
         var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-        text.setAttribute('x', 5);
-        text.setAttribute('y', 20);
+        text.setAttribute('x', widthRef.current / 40);
+        text.setAttribute('y', heightRef.current / 10);
         text.setAttribute('font-size', '20px');
         text.setAttribute('fill', 'black');
         text.textContent = result;
@@ -64,7 +64,7 @@ const InteractiveArea = ({ codeResult }) => {
     const formattedCodeResult = codeResult.split(';').map(line => line.trim()).join(';\n');
 
     return (
-        <div className='game-zone'>
+        <div className="showResult_container">
             <svg ref={canvasRef} className="showResult" ></svg>
             {/* 顯示轉換的JS、顯示執行結果 */}
             {/* <div>JavaScript:</div>

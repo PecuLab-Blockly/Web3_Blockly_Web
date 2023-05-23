@@ -1,7 +1,20 @@
+.injectionDiv {
+  /* 工作區形狀 */
+  border-radius: 20px;
+}
 .blocklyDiv {
-  height: 70%;
-  width: 70%;
+  height: 82.5%;
+  width: 49.8%;
   position: absolute;
-  top: 5%; 
+  /* padding-top: 0.5%; */
+  border-radius: 20px;
+}
+
+.runBtn {
+  height: auto;
+  width: auto;
+  position: absolute;
   right: 1%;
+  padding: 1%;
+  z-index: 1;
 }

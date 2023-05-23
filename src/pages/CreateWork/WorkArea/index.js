@@ -21,8 +21,15 @@
  * @author samelh@google.com (Sam El-Husseini)
  */
 import React, { useState } from 'react';
+// import './../CreateWork.scss'
 
-import BlocklyComponent, { Block, Value, Field, Shadow, Category } from './Blockly';
+import BlocklyComponent, {
+  Block,
+  Value,
+  Field,
+  Shadow,
+  Category
+} from './Blockly';
 
 import './blocks/customblocks';
 import './generator/generator';
@@ -45,7 +52,8 @@ function WorkArea(props) {
           length: 3,
           colour: '#ccc',
           snap: true,
-        }}>
+        }}
+      >
         <Category name="Logic">
           <Block type="controls_if" />
           <Block type="logic_compare" />
@@ -102,7 +110,6 @@ function WorkArea(props) {
         <Category name="Functions" custom="PROCEDURE"></Category>
         <Category name="Others">
           <Block type="draw_shapes" />
-          <Block type="time_delay" />
         </Category>
 
 

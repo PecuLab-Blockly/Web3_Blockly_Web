@@ -60,7 +60,7 @@ function BlocklyComponent(props) {
 
     return (
         <React.Fragment>
-            <button onClick={generateCode}>Run</button>
+            <button onClick={generateCode} className="runBtn">Run</button>
             <div ref={blocklyDiv} className="blocklyDiv" />
             <div style={{ display: 'none' }} ref={toolbox}>
                 {props.children}

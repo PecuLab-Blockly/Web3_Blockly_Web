@@ -1,8 +1,10 @@
 import './CreateWork.scss';
-import React, { useState, useEffect } from 'react';
-import Header from '../../components/Header';
-import InteractiveArea from './InteractiveArea';
+import { useState, useEffect, useCallback } from 'react';
+import CreateHeader from '../../components/Header/CreateHeader';
 import WorkArea from './WorkArea';
+import UploadImage from './UploadImage';
+import React from 'react';
+import InteractiveArea from './InteractiveArea';
 
 function CreateWork() {
   const [codeResult, setCodeResult] = useState('');
@@ -19,10 +21,19 @@ function CreateWork() {
 
   return (
     <div>
-      <Header />
+      <CreateHeader />
       <div className='createWork_container'>
-        <InteractiveArea codeResult={codeResult} />
-        {isWorkAreaRendered && <WorkArea onValueChange={handleCodeResult} />}
+        <div className='createWork_left'>
+          <div className='createWork_show'>
+            <InteractiveArea codeResult={codeResult} />
+          </div>
+          <div className='createWork_item'>
+            <UploadImage />
+          </div>
+        </div>
+        <div className='createWork_right'>
+          {isWorkAreaRendered && <WorkArea onValueChange={handleCodeResult} />}
+        </div>
       </div>
     </div>
   );

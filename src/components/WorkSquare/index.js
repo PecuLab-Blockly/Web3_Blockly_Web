@@ -1,4 +1,5 @@
 import './WorkSquare.scss';
+import React from 'react';
 
 function WorkSquare() {
   return (

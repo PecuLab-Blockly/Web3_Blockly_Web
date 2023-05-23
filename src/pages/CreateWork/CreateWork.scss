@@ -1,14 +1,48 @@
 @import '../../default.scss';
 
 .createWork_container {
+    background-color: #dbf2ff;
     position: absolute;
     top: 10%;
     height: 100%;
     width: 100%;
-    padding-bottom: 10%;
+    padding-top: 5%;
+    padding-bottom: 5%;
     justify-content: center;
     flex-direction: row;
     align-items: center;
-    // display:flex;
-    gap: 10%;
+    display: flex;
+}
+
+.createWork_left {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.createWork_show {
+    background-color: white;
+    border: 3px solid $blue;
+    width: 95%;
+    height: 48%;
+    border-radius: 20px;
+}
+
+.createWork_item {
+    background-color: white;
+    border: 3px solid $blue;
+    width: 95%;
+    height: 48%;
+    border-radius: 20px;
+}
+
+.createWork_right {
+    background-color: white;
+    border: 3px solid $blue;
+    width: 50%;
+    height: 100%;
+    border-radius: 20px;
 }
