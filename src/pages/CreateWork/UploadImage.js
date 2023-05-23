@@ -77,11 +77,14 @@ const UploadImage = () => {
           <div
             key={index}
             style={{
+              width: '20%',
+
               flexDirection: 'column',
               display: 'flex',
               position: 'relative',
               marginRight: '10px',
-              marginBottom: '10px'
+              marginBottom: '10px',
+              boxSizing: 'border-box'
             }}
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
@@ -95,8 +98,8 @@ const UploadImage = () => {
               <div
                 style={{
                   position: 'absolute',
-                  top: '5px',
-                  right: '40px',
+                  bottom: '10px',
+                  right: '0px',
                   cursor: 'pointer',
                   zIndex: 1
                 }}
