@@ -20,7 +20,6 @@
  * @fileoverview Main React component that includes the Blockly component.
  * @author samelh@google.com (Sam El-Husseini)
  */
-// #blocklyDiv App-header
 import React, { useState } from 'react';
 
 import BlocklyComponent, { Block, Value, Field, Shadow, Category } from './Blockly';
@@ -46,12 +45,7 @@ function WorkArea(props) {
           length: 3,
           colour: '#ccc',
           snap: true,
-        }}
-        initialXml={`
-<xml xmlns="http://www.w3.org/1999/xhtml">
-<block type="text_print" x="300" y="10"></block>
-</xml>
-    `}>
+        }}>
         <Category name="Logic">
           <Block type="controls_if" />
           <Block type="logic_compare" />
@@ -106,10 +100,12 @@ function WorkArea(props) {
         </Category>
         <Category name="Variables" custom="VARIABLE"></Category>
         <Category name="Functions" custom="PROCEDURE"></Category>
-        <Category name="Custom Blocks">
-          <Block type="test_react_field" />
-          <Block type="test_react_date_field" />
+        <Category name="Others">
+          <Block type="draw_shapes" />
+          <Block type="time_delay" />
         </Category>
+
+
       </BlocklyComponent>
     </div>
   );

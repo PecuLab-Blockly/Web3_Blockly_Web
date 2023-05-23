@@ -21,10 +21,8 @@
  * @author samelh@google.com (Sam El-Husseini)
  */
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './BlocklyComponent.css';
-import { useEffect, useRef, useState } from 'react';
-
 import Blockly from 'blockly/core';
 import { javascriptGenerator } from 'blockly/javascript';
 import locale from 'blockly/msg/en';
@@ -35,34 +33,30 @@ Blockly.setLocale(locale);
 function BlocklyComponent(props) {
     const blocklyDiv = useRef();
     const toolbox = useRef();
-    let primaryWorkspace = useRef();
-
-    // const [codeResult, setCodeResult] = useState('');
+    const primaryWorkspace = useRef(null);
 
     const generateCode = () => {
-        var code = javascriptGenerator.workspaceToCode(
-            primaryWorkspace.current
-        );
-        console.log(code);
-        // 執行程式
-        // eval(code);
+        const code = javascriptGenerator.workspaceToCode(primaryWorkspace.current);
+        // console.log(code);
         props.onValueChange(code);
-    }
+    };
 
     useEffect(() => {
         const { initialXml, children, ...rest } = props;
-        primaryWorkspace.current = Blockly.inject(
-            blocklyDiv.current,
-            {
+        if (!primaryWorkspace.current) {
+            primaryWorkspace.current = Blockly.inject(blocklyDiv.current, {
                 toolbox: toolbox.current,
                 ...rest
-            },
-        );
+            });
+        }
 
         if (initialXml) {
-            Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(initialXml), primaryWorkspace.current);
+            Blockly.Xml.domToWorkspace(
+                Blockly.Xml.textToDom(initialXml),
+                primaryWorkspace.current
+            );
         }
-    }, [primaryWorkspace, toolbox, blocklyDiv, props]);
+    }, [props]);
 
     return (
         <React.Fragment>
@@ -71,7 +65,8 @@ function BlocklyComponent(props) {
             <div style={{ display: 'none' }} ref={toolbox}>
                 {props.children}
             </div>
-        </React.Fragment>);
+        </React.Fragment>
+    );
 }
 
 export default BlocklyComponent;
