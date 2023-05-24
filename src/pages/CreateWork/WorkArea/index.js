@@ -20,8 +20,8 @@
  * @fileoverview Main React component that includes the Blockly component.
  * @author samelh@google.com (Sam El-Husseini)
  */
-// #blocklyDiv App-header
-import React from 'react'
+import React, { useState } from 'react'
+// import './../CreateWork.scss'
 
 import BlocklyComponent, {
   Block,
@@ -36,21 +36,23 @@ import './generator/generator'
 
 function WorkArea(props) {
   return (
-    <div className='blockly-btn'>
+    <div>
       <BlocklyComponent
+        onValueChange={props.onValueChange}
         readOnly={false}
         trashcan={true}
-        media={'media/'}
+        // media={'media/'}
         move={{
           scrollbars: true,
           drag: true,
           wheel: true
         }}
-        initialXml={`
-<xml xmlns="http://www.w3.org/1999/xhtml">
-<block type="text_print" x="300" y="10"></block>
-</xml>
-    `}
+        grid={{
+          spacing: 20,
+          length: 3,
+          colour: '#ccc',
+          snap: true
+        }}
       >
         <Category name='Logic'>
           <Block type='controls_if' />
@@ -106,9 +108,8 @@ function WorkArea(props) {
         </Category>
         <Category name='Variables' custom='VARIABLE'></Category>
         <Category name='Functions' custom='PROCEDURE'></Category>
-        <Category name='Custom Blocks'>
-          <Block type='test_react_field' />
-          <Block type='test_react_date_field' />
+        <Category name='Others'>
+          <Block type='draw_shapes' />
         </Category>
       </BlocklyComponent>
     </div>

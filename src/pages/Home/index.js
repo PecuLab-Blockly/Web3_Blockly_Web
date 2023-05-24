@@ -1,12 +1,13 @@
 import './Home.scss'
 import { useState, useEffect, useCallback } from 'react'
 import Header from '../../components/Header/HomeHeader'
-import { Link } from 'react-router-dom'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPencilAlt, faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 import React from 'react'
 import RecentDesignDisplay from './RecentDesignDisplay'
 import PopularDesignDisplay from './PopularDesignDisplay'
+import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 
 function Home() {
   return (

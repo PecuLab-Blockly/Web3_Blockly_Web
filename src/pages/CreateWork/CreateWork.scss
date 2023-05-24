@@ -1,4 +1,4 @@
-@import '../../default.scss';
+@import "../../default.scss";
 
 .createWork_container {
   background-color: #dbf2ff;
@@ -13,6 +13,7 @@
   align-items: center;
   display: flex;
 }
+
 .createWork_left {
   width: 50%;
   height: 100%;
@@ -21,6 +22,7 @@
   align-items: center;
   justify-content: space-between;
 }
+
 .createWork_show {
   background-color: white;
   border: 3px solid $blue;
@@ -28,6 +30,7 @@
   height: 48%;
   border-radius: 20px;
 }
+
 .createWork_item {
   background-color: white;
   border: 3px solid $blue;
@@ -35,6 +38,7 @@
   height: 48%;
   border-radius: 20px;
 }
+
 .createWork_right {
   background-color: white;
   border: 3px solid $blue;

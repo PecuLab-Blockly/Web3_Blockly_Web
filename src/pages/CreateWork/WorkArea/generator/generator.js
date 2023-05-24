@@ -24,12 +24,33 @@
 // More on generating code:
 // https://developers.google.com/blockly/guides/create-custom-blocks/generating-code
 
-import {javascriptGenerator} from 'blockly/javascript';
+import { javascriptGenerator } from 'blockly/javascript'
 
-javascriptGenerator['test_react_field'] = function (block) {
-    return 'console.log(\'custom block\');\n';
-};
+javascriptGenerator['test_react_field'] = function(block) {
+  return 'console.log(\'custom block\');\n'
+}
 
-javascriptGenerator['test_react_date_field'] = function (block) {
-    return 'console.log(' + block.getField('DATE').getText() + ');\n';
-};
+javascriptGenerator['test_react_date_field'] = function(block) {
+  return 'console.log(' + block.getField('DATE').getText() + ');\n'
+}
+
+javascriptGenerator['draw_shapes'] = function(block) {
+  var shapesChoose = block.getFieldValue('shapesChoose')
+  var color = block.getFieldValue('顏色')
+  var size = javascriptGenerator.valueToCode(
+    block,
+    'size',
+    javascriptGenerator.ORDER_ATOMIC
+  )
+
+  var code = ''
+  if (shapesChoose === 'circle') {
+    code = `drawCircle(${size}, "${color}");\n`
+  } else if (shapesChoose === 'squre') {
+    code = `drawSqure(${size}, "${color}");\n`
+  } else if (shapesChoose === 'line') {
+    code = `drawLine(${size}, "${color}");\n`
+  }
+
+  return code
+}

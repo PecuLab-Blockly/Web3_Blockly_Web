@@ -24,53 +24,90 @@
 // More on defining blocks:
 // https://developers.google.com/blockly/guides/create-custom-blocks/define-blocks
 
-
-import * as Blockly from 'blockly/core';
+import * as Blockly from 'blockly/core'
 
 // Since we're using json to initialize the field, we'll need to import it.
-import '../fields/BlocklyReactField';
-import '../fields/DateField';
+import '../fields/BlocklyReactField'
+import '../fields/DateField'
 
-import '@blockly/field-date';
+import '@blockly/field-date'
 
 let reactDateField = {
-        "type": "test_react_date_field",
-        "message0": "date field: %1",
-        "args0": [
-            {
-                "type": "field_date",
-                "name": "DATE",
-                "date": "2020-02-20"
-            }
-        ],
-        "previousStatement": null,
-        "nextStatement": null,
-    };
+  type: 'test_react_date_field',
+  message0: 'date field: %1',
+  args0: [
+    {
+      type: 'field_date',
+      name: 'DATE',
+      date: '2020-02-20'
+    }
+  ],
+  previousStatement: null,
+  nextStatement: null
+}
 
 Blockly.Blocks['test_react_date_field'] = {
   init: function() {
-    this.jsonInit(reactDateField);
-    this.setStyle('loop_blocks');
+    this.jsonInit(reactDateField)
+    this.setStyle('loop_blocks')
   }
 }
 
 var testReactField = {
-  "type": "test_react_field",
-  "message0": "custom field %1",
-  "args0": [
+  type: 'test_react_field',
+  message0: 'custom field %1',
+  args0: [
     {
-      "type": "field_react_component",
-      "name": "FIELD",
-      "text": "Click me"
-    },
+      type: 'field_react_component',
+      name: 'FIELD',
+      text: 'Click me'
+    }
   ],
-  "previousStatement": null,
-  "nextStatement": null,
-};
+  previousStatement: null,
+  nextStatement: null
+}
 
 Blockly.Blocks['test_react_field'] = {
   init: function() {
-    this.jsonInit(testReactField);
-    this.setStyle('loop_blocks');
+    this.jsonInit(testReactField)
+    this.setStyle('loop_blocks')
   }
-};
+}
+
+var drawShapes = {
+  type: 'draw_shapes',
+  message0: '圖形設置 %1 %2 大小 %3',
+  args0: [
+    {
+      type: 'field_dropdown',
+      name: 'shapesChoose',
+      options: [
+        ['圓形', 'circle'],
+        ['正方形', 'squre'],
+        ['直線', 'line']
+      ]
+    },
+    {
+      type: 'field_colour',
+      name: '顏色',
+      colour: '#ff0000'
+    },
+    {
+      type: 'input_value',
+      name: 'size',
+      check: 'Number'
+    }
+  ],
+  inputsInline: true,
+  previousStatement: null,
+  nextStatement: null,
+  colour: 45,
+  tooltip: '建造一個圖形',
+  helpUrl: ''
+}
+
+Blockly.Blocks['draw_shapes'] = {
+  init: function() {
+    this.jsonInit(drawShapes)
+  }
+}

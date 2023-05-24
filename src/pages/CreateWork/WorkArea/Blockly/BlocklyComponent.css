@@ -1,14 +1,20 @@
-#blocklyDiv {
-  height: 95%;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
+.injectionDiv {
+  /* 工作區形狀 */
+  border-radius: 20px;
 }
-.run {
-  margin: auto;
-  display: flex;
-  /* background-color: #ff7878;
-  color: #fff;
-  border: #fff; */
-  font-size: 16px;
+.blocklyDiv {
+  height: 82.5%;
+  width: 49.8%;
+  position: absolute;
+  /* padding-top: 0.5%; */
+  border-radius: 20px;
+}
+
+.runBtn {
+  height: auto;
+  width: auto;
+  position: absolute;
+  right: 1%;
+  padding: 1%;
+  z-index: 1;
 }
