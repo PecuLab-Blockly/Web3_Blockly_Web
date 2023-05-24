@@ -1,12 +1,16 @@
-import './WorkSquare.scss'
 import React from 'react'
+import './WorkSquare.scss'
 
-function WorkSquare() {
+function WorkSquare({ data }) {
   return (
     <div className='WorkSquare'>
-      <div className='work_image'></div>
-      <div className='work_content'>
-        <h4>作品名稱</h4>
+      <div className='work_item'>
+        <div className='work_image'>
+          <img src={data.image} alt={data.name} />
+        </div>
+        <div className='work_content'>
+          <h4>{data.name}</h4>
+        </div>
       </div>
     </div>
   )

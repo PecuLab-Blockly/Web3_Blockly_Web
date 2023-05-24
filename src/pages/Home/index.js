@@ -1,37 +1,20 @@
 import './Home.scss'
 import { useState, useEffect, useCallback } from 'react'
 import Header from '../../components/Header/HomeHeader'
-import WorkSquare from '../../components/WorkSquare'
-
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPencilAlt } from '@fortawesome/free-solid-svg-icons'
-import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
+import { faPencilAlt, faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 import React from 'react'
+import RecentDesignDisplay from './RecentDesignDisplay'
+import PopularDesignDisplay from './PopularDesignDisplay'
+
 function Home() {
-  const [showArrow, setShowArrow] = useState(false)
-  const [currentWorkIndex, setCurrentWorkIndex] = useState(0)
-
-  const handleMouseEnter = useCallback(() => {
-    setShowArrow(true)
-  }, [])
-
-  const handleMouseLeave = useCallback(() => {
-    setShowArrow(false)
-  }, [])
-  const handleArrowClick = useCallback(() => {
-    if (currentWorkIndex === 2) {
-      setCurrentWorkIndex(0)
-    } else {
-      setCurrentWorkIndex(currentWorkIndex + 1)
-    }
-  }, [currentWorkIndex])
   return (
     <div>
-      <Header></Header>
+      <Header />
       <div className='home_container'>
         <div className='home_column one'>
+          {/* 最近的設計 */}
           <div className='home_column_one_left'>
             <div className='title'>
               <div className='title_square_one'>
@@ -40,27 +23,10 @@ function Home() {
                 </div>
               </div>
             </div>
-            {/* 滑鼠hover作品區域會顯現向右按鈕 */}
-            <div
-              className='work_display'
-              id='NextButton'
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-            >
-              {showArrow && (
-                <div className='arrow_circle top'>
-                  <FontAwesomeIcon
-                    icon={faChevronRight}
-                    size='1x'
-                    style={{ marginRight: '2px', color: 'white' }}
-                  />
-                </div>
-              )}
-              <WorkSquare></WorkSquare>
-              <WorkSquare></WorkSquare>
-              <WorkSquare></WorkSquare>
-            </div>
+            {/* 最近設計-作品區域 */}
+            <RecentDesignDisplay />
           </div>
+          {/* 右上方的兩個按鈕 */}
           <div className='home_column_one_right'>
             <button className='button red'>
               <FontAwesomeIcon
@@ -81,6 +47,8 @@ function Home() {
             </button>
           </div>
         </div>
+
+        {/* 熱門項目 */}
         <div className='home_column two'>
           <div className='title'>
             <div className='title_square'>
@@ -89,27 +57,7 @@ function Home() {
               </div>
             </div>
           </div>
-          <div
-            className='work_display'
-            id='NextButton'
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-          >
-            {showArrow && (
-              <div className='arrow_circle below'>
-                <FontAwesomeIcon
-                  icon={faChevronRight}
-                  size='1x'
-                  style={{ marginRight: '2px', color: 'white' }}
-                />
-              </div>
-            )}
-            <WorkSquare></WorkSquare>
-            <WorkSquare></WorkSquare>
-            <WorkSquare></WorkSquare>
-            <WorkSquare></WorkSquare>
-            <WorkSquare></WorkSquare>
-          </div>
+          <PopularDesignDisplay />
         </div>
       </div>
     </div>
