@@ -8,8 +8,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import React from 'react'
 
-function RecentDesignDisplay() {
-  const [fakeData, setFakeData] = useState([
+function PopularDesignDisplay() {
+  const [popularFakeData, setPopularFakeData] = useState([
     {
       id: 1,
       image:
@@ -45,52 +45,88 @@ function RecentDesignDisplay() {
       image:
         'https://cdn.pixabay.com/photo/2016/12/13/05/15/puppy-1903313_1280.jpg',
       name: '作品名稱6'
+    },
+    {
+      id: 7,
+      image:
+        'https://cdn.pixabay.com/photo/2016/12/13/05/15/puppy-1903313_1280.jpg',
+      name: '作品名稱7'
+    },
+    {
+      id: 8,
+      image:
+        'https://cdn.pixabay.com/photo/2016/12/13/05/15/puppy-1903313_1280.jpg',
+      name: '作品名稱8'
+    },
+    {
+      id: 9,
+      image:
+        'https://cdn.pixabay.com/photo/2016/12/13/05/15/puppy-1903313_1280.jpg',
+      name: '作品名稱9'
+    },
+    {
+      id: 10,
+      image:
+        'https://cdn.pixabay.com/photo/2016/12/13/05/15/puppy-1903313_1280.jpg',
+      name: '作品名稱10'
+    },
+    {
+      id: 11,
+      image:
+        'https://cdn.pixabay.com/photo/2016/12/13/05/15/puppy-1903313_1280.jpg',
+      name: '作品名稱11'
+    },
+    {
+      id: 12,
+      image:
+        'https://cdn.pixabay.com/photo/2016/12/13/05/15/puppy-1903313_1280.jpg',
+      name: '作品名稱12'
     }
   ])
-  const [showArrow, setShowArrow] = useState(false)
-  const [visibleWorks, setVisibleWorks] = useState(3)
-  const [startIndex, setStartIndex] = useState(0)
-  const visibleData = fakeData.slice(startIndex, startIndex + visibleWorks)
-  const [nextWorkIndex, setNextWorkIndex] = useState(0)
 
-  const handleMouseEnter = useCallback(() => {
-    setShowArrow(true)
+  const [popularShowArrow, setPopularShowArrow] = useState(false)
+  const visibleWorks = 6
+  const [popularStartIndex, setPopularStartIndex] = useState(0)
+
+  const popularHandleMouseEnter = useCallback(() => {
+    setPopularShowArrow(true)
   }, [])
 
-  const handleMouseLeave = useCallback(() => {
-    setShowArrow(false)
+  const popularHandleLeave = useCallback(() => {
+    setPopularShowArrow(false)
   }, [])
 
-  const handleArrowClick = useCallback(
+  const popularHandleArrowClick = useCallback(
     (direction) => {
-      if (direction === 'right') {
-        const totalWorks = fakeData.length
-        const remainingWorks = totalWorks - startIndex - visibleWorks
-        const nextVisibleWorks =
-          remainingWorks >= 3 ? visibleWorks + 1 : visibleWorks + remainingWorks
-        setVisibleWorks(nextVisibleWorks)
-        setStartIndex(startIndex + 1)
-        setNextWorkIndex(nextWorkIndex + 1)
-      } else if (direction === 'left') {
-        setVisibleWorks(visibleWorks - 1)
-        setStartIndex(startIndex - 1)
-        setNextWorkIndex(nextWorkIndex - 1)
+      if (
+        direction === 'right' &&
+        popularStartIndex + visibleWorks < popularFakeData.length
+      ) {
+        setPopularStartIndex(popularStartIndex + 1)
+      } else if (direction === 'left' && popularStartIndex > 0) {
+        setPopularStartIndex(popularStartIndex - 1)
       }
     },
-    [visibleWorks, startIndex, fakeData.length, nextWorkIndex]
+    [popularStartIndex, visibleWorks, popularFakeData.length]
+  )
+
+  const visibleData = popularFakeData.slice(
+    popularStartIndex,
+    popularStartIndex + visibleWorks
   )
 
   return (
     <div
       className='work_display'
       id='NextButton'
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+      onMouseEnter={popularHandleMouseEnter}
+      onMouseLeave={popularHandleLeave}
     >
-      {showArrow && (
+      {popularShowArrow &&
+        popularStartIndex + visibleWorks < popularFakeData.length && (
         <div
-          className='arrow_circle below'
-          onClick={() => handleArrowClick('right')}
+          className='popular_arrow_circle right'
+          onClick={() => popularHandleArrowClick('right')}
         >
           <FontAwesomeIcon
             icon={faChevronRight}
@@ -99,18 +135,25 @@ function RecentDesignDisplay() {
           />
         </div>
       )}
-      {fakeData.map((data, index) => (
-        <WorkSquare
-          key={data.id}
-          data={data}
-          style={
-            index >= visibleData.length
-              ? { width: '90px', height: '90px' }
-              : null
-          }
-        />
+
+      {popularShowArrow && popularStartIndex > 0 && (
+        <div
+          className='popular_arrow_circle left'
+          onClick={() => popularHandleArrowClick('left')}
+        >
+          <FontAwesomeIcon
+            icon={faChevronLeft}
+            size='1x'
+            style={{ marginRight: '2px', color: 'white' }}
+          />
+        </div>
+      )}
+
+      {visibleData.map((data) => (
+        <WorkSquare key={data.id} data={data} />
       ))}
     </div>
   )
 }
-export default RecentDesignDisplay
+
+export default PopularDesignDisplay

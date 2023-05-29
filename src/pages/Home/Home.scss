@@ -34,12 +34,13 @@
   gap: 10%;
 }
 .work_display {
-  height: 90%;
+  height: 100%;
   display: flex;
   flex-direction: row;
   gap: 1%;
   width: 100%;
 }
+
 .home_column_one_right {
   width: 30%;
   height: 100%;
@@ -117,12 +118,50 @@
     top: 25%;
     transform: translateY(-50%);
   }
-  &.below {
-    right: 3%;
-    top: 70%;
+  &.left {
+    left: 3%;
+    top: 25%;
     transform: translateY(-50%);
   }
   &:hover {
     background-color: #74bae1;
   }
+}
+.popular_arrow_circle {
+  /* 移除 .top 類別 */
+  z-index: 99;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: $blue;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: drop-shadow(2px 4px 20px rgba(47, 139, 205, 0.2));
+  &:hover {
+    background-color: #74bae1;
+  }
+}
+/* 新增以下部分 */
+.work_display:hover .arrow_circle {
+  opacity: 1;
+}
+
+.work_display:hover .popular_arrow_circle {
+  opacity: 1;
+}
+
+.popular_arrow_circle.left {
+  left: 3%;
+  top: 70%;
+  transform: translateY(-50%);
+}
+
+.popular_arrow_circle.right {
+  right: 3%;
+  top: 70%;
+  transform: translateY(-50%);
 }

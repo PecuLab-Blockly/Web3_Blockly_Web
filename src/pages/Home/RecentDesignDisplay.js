@@ -8,7 +8,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import React from 'react'
 
-function PopularDesignDisplay() {
+function RecentDesignDisplay() {
   const [fakeData, setFakeData] = useState([
     {
       id: 1,
@@ -48,10 +48,9 @@ function PopularDesignDisplay() {
     }
   ])
   const [showArrow, setShowArrow] = useState(false)
-  const [visibleWorks, setVisibleWorks] = useState(3)
+  const visibleWorks = 3
   const [startIndex, setStartIndex] = useState(0)
   const visibleData = fakeData.slice(startIndex, startIndex + visibleWorks)
-  const [nextWorkIndex, setNextWorkIndex] = useState(0)
 
   const handleMouseEnter = useCallback(() => {
     setShowArrow(true)
@@ -63,21 +62,16 @@ function PopularDesignDisplay() {
 
   const handleArrowClick = useCallback(
     (direction) => {
-      if (direction === 'right') {
-        const totalWorks = fakeData.length
-        const remainingWorks = totalWorks - startIndex - visibleWorks
-        const nextVisibleWorks =
-          remainingWorks >= 3 ? visibleWorks + 1 : visibleWorks + remainingWorks
-        setVisibleWorks(nextVisibleWorks)
+      if (
+        direction === 'right' &&
+        startIndex + visibleWorks < fakeData.length
+      ) {
         setStartIndex(startIndex + 1)
-        setNextWorkIndex(nextWorkIndex + 1)
-      } else if (direction === 'left') {
-        setVisibleWorks(visibleWorks - 1)
+      } else if (direction === 'left' && startIndex > 0) {
         setStartIndex(startIndex - 1)
-        setNextWorkIndex(nextWorkIndex - 1)
       }
     },
-    [visibleWorks, startIndex, fakeData.length, nextWorkIndex]
+    [startIndex, visibleWorks, fakeData.length]
   )
 
   return (
@@ -87,7 +81,7 @@ function PopularDesignDisplay() {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      {showArrow && fakeData.length > visibleWorks && (
+      {showArrow && startIndex + visibleWorks < fakeData.length && (
         <div
           className='arrow_circle top'
           onClick={() => handleArrowClick('right')}
@@ -119,4 +113,5 @@ function PopularDesignDisplay() {
     </div>
   )
 }
-export default PopularDesignDisplay
+
+export default RecentDesignDisplay
