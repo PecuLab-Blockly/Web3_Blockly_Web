@@ -39,14 +39,15 @@ function Step3ToNFT() {
             {isconfirmed && <div className="sucess-to-NFT">
                 <h2>發行完成！</h2>
                 <div className="icon-inbox-success">
-                    <FontAwesomeIcon
+                    <img src="https://cdn.discordapp.com/attachments/743828889276776472/1113040907558723594/image.png" width={'80px'}/>
+                    {/* <FontAwesomeIcon
                         icon={faInbox}
                         size='5x'
                     />
                     <FontAwesomeIcon
                         icon={faCheck}
                         size='2x'
-                    />
+                    /> */}
                 </div>
                 <a>作品的NFT編碼：</a>
                 <div className="NFT-code" onClick={handleCopyNFTCode}>
