@@ -47,7 +47,7 @@ let reactDateField = {
 }
 
 Blockly.Blocks['test_react_date_field'] = {
-  init: function () {
+  init: function() {
     this.jsonInit(reactDateField)
     this.setStyle('loop_blocks')
   }
@@ -68,7 +68,7 @@ var testReactField = {
 }
 
 Blockly.Blocks['test_react_field'] = {
-  init: function () {
+  init: function() {
     this.jsonInit(testReactField)
     this.setStyle('loop_blocks')
   }
@@ -107,18 +107,17 @@ var drawShapes = {
 }
 
 Blockly.Blocks['draw_shapes'] = {
-  init: function () {
+  init: function() {
     this.jsonInit(drawShapes)
   }
 }
 
 Blockly.Blocks['text_line_break'] = {
   init: function() {
-    this.appendDummyInput()
-        .appendField("line break");
-    this.setOutput(true, null);
-    this.setColour(160);
-    this.setTooltip("換行");
-    this.setHelpUrl("");
+    this.appendDummyInput().appendField('line break')
+    this.setOutput(true, null)
+    this.setColour(160)
+    this.setTooltip('換行')
+    this.setHelpUrl('')
   }
-};
+}

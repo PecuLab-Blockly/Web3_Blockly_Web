@@ -41,10 +41,9 @@ javascriptGenerator['test_react_date_field'] = function(block) {
 // };
 
 javascriptGenerator['text_line_break'] = function(block) {
-  return [ "'\\n'", javascriptGenerator.ORDER_ATOMIC];
+  return ['\'\\n\'', javascriptGenerator.ORDER_ATOMIC]
   // return [ "'<br/>'", javascriptGenerator.ORDER_ATOMIC];
-};
-
+}
 
 javascriptGenerator['draw_shapes'] = function(block) {
   var shapesChoose = block.getFieldValue('shapesChoose')
