@@ -5,10 +5,13 @@ import WorkArea from './WorkArea'
 import UploadImage from './UploadImage'
 import React from 'react'
 import InteractiveArea from './InteractiveArea'
+import PublishWork from './PublishWork';
+
 
 function CreateWork() {
   const [codeResult, setCodeResult] = useState('')
   const [isWorkAreaRendered, setWorkAreaRendered] = useState(false)
+  const [isNFTModalOpen, setNFTModalOpen] = useState(false)
 
   const handleCodeResult = (result) => {
     setCodeResult(result)
@@ -19,9 +22,20 @@ function CreateWork() {
     setWorkAreaRendered(true)
   }, [])
 
+  const handleNFTButtonClick = () => {
+    console.log("clicked!")
+    setNFTModalOpen(true);
+  };
+
+  const handleCloseNFTModal = () => {
+    setNFTModalOpen(false);
+  };
+
   return (
     <div>
-      <CreateHeader />
+      {/* 發布NFT */}
+      {isNFTModalOpen && <PublishWork onCloseModal={handleCloseNFTModal} />}
+      <CreateHeader onNFTButtonClick={handleNFTButtonClick} />
       <div className='createWork_container'>
         <div className='createWork_left'>
           <div className='createWork_show'>

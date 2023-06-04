@@ -1,0 +1,116 @@
+@import '../../../default.scss';
+
+.publishNFT-container {
+    top: 0%;
+    // top: 10%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .5);
+    position: fixed;
+    // display: none;
+    z-index: 1000; //因為錢包z-index:999
+}
+
+.publishNFT {
+    width: 60%;
+    height: 80%;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.closeButton {
+    height: 40px;
+    margin: 5px;
+    background-color: transparent;
+    display: flex;
+    color: #908E8E;
+    width: auto;
+    height: auto;
+    border-radius: 20px;
+    align-self: flex-end;
+
+}
+
+.closeButton:hover {
+    background-color: transparent;
+}
+
+.separator {
+    width: 100%;
+    height: 1px;
+    background-color: #908E8E;
+    margin: 10px 0;
+}
+
+.content-container {
+    // padding: 20px;
+    width: 70%;
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    // background-color: rgb(143, 156, 156);
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+
+.step-button-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+
+.preStepButton {
+    height: 40px;
+    margin: 5px;
+    background-color: white;
+    align-self: flex-end;
+    font-weight: bolder;
+    color: $red;
+
+    &:hover {
+        background-color: $red-hover;
+        color: white;
+    }
+}
+
+.StepButton {
+    height: 40px;
+    margin: 5px;
+    background-color: $red;
+    align-self: flex-end;
+    font-weight: bolder;
+
+    &:hover {
+        background-color: $red-hover;
+    }
+}
+
+.FinishButton {
+    height: 40px;
+    margin: 5px;
+    background-color: #908E8E;
+    align-self: flex-end;
+    font-weight: bolder;
+
+    &:hover {
+        background-color: $red-hover;
+    }
+}
+
+
+.active .FinishButton {
+    background-color: #908E8E;
+}

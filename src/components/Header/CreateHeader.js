@@ -12,7 +12,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import React from 'react'
 
-function CreateHeader() {
+function CreateHeader(props) {
   const [showMemberMenu, setShowMemberMenu] = useState(false)
   const [workName, setWorkName] = useState('作品名稱') // 設定初始作品名稱為 "作品名稱"
   const [editing, setEditing] = useState(false) // 設定是否在編輯狀態
@@ -85,7 +85,7 @@ function CreateHeader() {
           <div className='createHeader-right'>
             {/* 發行NFT按鈕 */}
             <button className='save-button'>暫存遊戲</button>
-            <button className='NFT-button'>發行遊戲</button>
+            <button className='NFT-button' onClick={props.onNFTButtonClick}>發行遊戲</button>
             <ul
               className='member-list'
               style={{

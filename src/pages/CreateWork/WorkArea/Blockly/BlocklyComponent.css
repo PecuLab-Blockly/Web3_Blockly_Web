@@ -1,7 +1,10 @@
+/* 這裡的CSS可以用開發者工具找到貼過來修改 */
+
 .injectionDiv {
   /* 工作區形狀 */
   border-radius: 20px;
 }
+
 .blocklyDiv {
   height: 82.5%;
   width: 49.8%;
