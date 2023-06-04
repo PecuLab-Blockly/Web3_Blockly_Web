@@ -21,44 +21,45 @@ function DisplayWorks() {
     {
       type: 'A',
       status: 'draft',
-      name: '未發行作品1',
       image:
-        'https://cdn.pixabay.com/photo/2016/12/13/05/15/puppy-1903313_1280.jpg'
+        'https://unity.com/sites/default/files/styles/16_9_s_scale_width/public/2019-11/Rubys-adventure-2D-tutorial-Unity.jpg?itok=fQDz_fdF',
+      name: '走路的鱷魚'
     },
     {
       type: 'A',
       status: 'draft',
-      name: '未發行作品2',
       image:
-        'https://cdn.pixabay.com/photo/2016/12/13/05/15/puppy-1903313_1280.jpg'
+        'https://unity.com/sites/default/files/styles/810_scale_width/public/2021-11/children-of-morta-810x455%401x.jpg?itok=5MZ-4uD8',
+      name: '奇幻森林'
     },
     {
       type: 'A',
       status: 'draft',
-      name: '未發行作品3',
       image:
-        'https://cdn.pixabay.com/photo/2016/12/13/05/15/puppy-1903313_1280.jpg'
+        'https://unity.com/sites/default/files/styles/810_scale_width/public/2021-11/hearthstone-810x455%401x.jpg?itok=Z8nH7591',
+      name: '恐怖的老鼠'
     },
     {
       type: 'A',
       status: 'draft',
-      name: '未發行作品4',
       image:
-        'https://cdn.pixabay.com/photo/2016/12/13/05/15/puppy-1903313_1280.jpg'
+        'https://play-lh.googleusercontent.com/KKvwIEz5CE-k67sdDCJ4ipAZ0pAwXPgeSAA5zTgJTacuUckq__eCUeiD4zU5yX4FlA=w1052-h592-rw',
+      name: '划船'
     },
+
     {
       type: 'A',
       status: 'draft',
-      name: '未發行作品5',
+      name: '還沒想好名字',
       image:
         'https://cdn.pixabay.com/photo/2016/12/13/05/15/puppy-1903313_1280.jpg'
     },
     {
       type: 'A',
       status: 'published',
-      name: '已發行作品1',
       image:
-        'https://cdn.pixabay.com/photo/2016/12/13/05/15/puppy-1903313_1280.jpg',
+        'https://cdn0.techbang.com/system/excerpt_images/47394/original/412dd61b293f336a0b0c95572e21078b.png?1478707071',
+      name: '神奇島',
       view: 10,
       save: 5,
       earn: 100
@@ -66,9 +67,19 @@ function DisplayWorks() {
     {
       type: 'A',
       status: 'published',
-      name: '已發行作品2',
       image:
-        'https://cdn.pixabay.com/photo/2016/12/13/05/15/puppy-1903313_1280.jpg',
+        'https://celcliptipsprod.s3-ap-northeast-1.amazonaws.com/tips_article_body/ea57/472252/7f2df69be9b1003ef3550b8f82c87d20',
+      name: '叢林探險',
+      view: 15,
+      save: 3,
+      earn: 150
+    },
+    {
+      type: 'A',
+      status: 'published',
+      image:
+        'https://cdn.pixabay.com/photo/2019/08/19/07/45/corgi-4415649_1280.jpg',
+      name: '我家愛淋雨的狗勾',
       view: 20,
       save: 8,
       earn: 200
@@ -76,33 +87,14 @@ function DisplayWorks() {
     {
       type: 'A',
       status: 'published',
-      name: '已發行作品3',
       image:
-        'https://cdn.pixabay.com/photo/2016/12/13/05/15/puppy-1903313_1280.jpg',
-      view: 15,
-      save: 3,
-      earn: 150
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Secretmaryochronicles.png/330px-Secretmaryochronicles.png',
+      name: '水管工的冒險',
+      view: 20,
+      save: 8,
+      earn: 200
     },
-    {
-      type: 'A',
-      status: 'published',
-      name: '已發行作品4',
-      image:
-        'https://cdn.pixabay.com/photo/2016/12/13/05/15/puppy-1903313_1280.jpg',
-      view: 15,
-      save: 3,
-      earn: 150
-    },
-    {
-      type: 'A',
-      status: 'published',
-      name: '已發行作品5',
-      image:
-        'https://cdn.pixabay.com/photo/2016/12/13/05/15/puppy-1903313_1280.jpg',
-      view: 15,
-      save: 3,
-      earn: 150
-    },
+
     {
       type: 'B',
       name: '擁有1',
