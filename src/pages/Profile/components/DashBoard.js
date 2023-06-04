@@ -8,15 +8,15 @@ function DashBoard() {
     <div className='dashboard'>
       <div className='dashboard_top'>
         <div className='data'>
-          <div style={{ fontSize: '32px' }}>10</div>
+          <div style={{ fontSize: '2vw' }}>10</div>
           <div>作品數</div>
         </div>
         <div className='data'>
-          <div style={{ fontSize: '32px' }}>8</div>
+          <div style={{ fontSize: '2vw' }}>8</div>
           <div>發行數</div>
         </div>
         <div className='data'>
-          <div style={{ fontSize: '32px' }}>100</div>
+          <div style={{ fontSize: '2vw' }}>100</div>
           <div>收益量</div>
         </div>
       </div>

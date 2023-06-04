@@ -56,7 +56,7 @@ function Header() {
             <FontAwesomeIcon
               icon={faWallet}
               size='1x'
-              style={{ marginRight: '3px', marginTop: '8px' }}
+              // style={{ marginRight: '3px', marginTop: '8px' }}
             />
             <a href='#'>connencting to wallet</a>
             {showMemberMenu && (
@@ -91,8 +91,8 @@ function Header() {
               style={{
                 color: 'white',
                 backgroundColor: '#322FCD',
-                width: '40px',
-                height: '30px',
+                width: '2.8vw',
+                height: '2vw',
                 borderRadius: '50%'
               }}
             ></div>

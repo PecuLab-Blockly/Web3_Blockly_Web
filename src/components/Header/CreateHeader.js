@@ -140,8 +140,8 @@ function CreateHeader() {
                   style={{
                     color: 'white',
                     backgroundColor: '#322FCD',
-                    width: '40vw',
-                    height: '4vh',
+                    width: '100vw',
+                    height: '2vw',
                     borderRadius: '50%'
                   }}
                 ></div>

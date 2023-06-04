@@ -36,11 +36,15 @@
 .work_display {
   height: 100%;
   display: flex;
-  flex-direction: row;
+  flex-wrap: nowrap; /* 防止方塊換行 */
   gap: 1%;
   width: 100%;
+  justify-content: space-between; /* 平均分佈方塊和按鈕 */
+  position: relative; /* 設置為相對定位 */
 }
-
+.work_display-container {
+  position: relative;
+}
 .home_column_one_right {
   width: 30%;
   height: 100%;
@@ -67,7 +71,7 @@
   width: 20vw;
   color: white;
   font-weight: bold;
-  font-size: large;
+  font-size: 1.5vw;
   filter: drop-shadow(0px 4px 20px rgba(47, 139, 205, 0.25));
   &.red {
     background-color: $red;
@@ -90,8 +94,6 @@
 }
 
 .h2 {
-  font-size: $h2-font-size;
-  font-weight: $h2-font-weight;
   background-color: white;
   text-align: center;
 }
@@ -102,9 +104,8 @@
 
 .arrow_circle {
   z-index: 99;
-  position: absolute;
-  width: 40px;
-  height: 40px;
+  width: 3vw;
+  height: 3vw;
   border-radius: 50%;
   background-color: $blue;
   opacity: 0;
@@ -113,26 +114,28 @@
   justify-content: center;
   align-items: center;
   filter: drop-shadow(2px 4px 20px rgba(47, 139, 205, 0.2));
-  &.top {
-    right: 35%;
-    top: 25%;
+  &.right {
+    position: absolute;
+    right: 0;
+    top: 50%;
     transform: translateY(-50%);
+    margin-left: 1%; /* 設置按鈕與容器的間距 */
   }
   &.left {
-    left: 3%;
-    top: 25%;
+    position: absolute;
+    left: 0;
+    top: 50%;
     transform: translateY(-50%);
+    margin-right: 1%; /* 設置按鈕與容器的間距 */
   }
   &:hover {
     background-color: #74bae1;
   }
 }
 .popular_arrow_circle {
-  /* 移除 .top 類別 */
   z-index: 99;
-  position: absolute;
-  width: 40px;
-  height: 40px;
+  width: 3vw;
+  height: 3vw;
   border-radius: 50%;
   background-color: $blue;
   opacity: 0;
@@ -145,6 +148,7 @@
     background-color: #74bae1;
   }
 }
+
 /* 新增以下部分 */
 .work_display:hover .arrow_circle {
   opacity: 1;
@@ -155,13 +159,17 @@
 }
 
 .popular_arrow_circle.left {
-  left: 3%;
-  top: 70%;
+  position: absolute;
+  left: 0;
+  top: 50%;
   transform: translateY(-50%);
+  margin-right: 1%; /* 設置按鈕與容器的間距 */
 }
 
 .popular_arrow_circle.right {
-  right: 3%;
-  top: 70%;
+  position: absolute;
+  right: 0;
+  top: 50%;
   transform: translateY(-50%);
+  margin-left: 1%; /* 設置按鈕與容器的間距 */
 }

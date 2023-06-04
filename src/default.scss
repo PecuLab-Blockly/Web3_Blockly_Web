@@ -2,8 +2,19 @@ $blue: #3199d2;
 $yellow: #fecd25;
 $red: #f86676;
 $red-hover: #ff8895;
-$h2-font-size: 24px;
-$h2-font-weight: bold;
+
 body {
   background-color: #ffffff;
+  font-size: 1.5vw;
+}
+h1 {
+  font-size: 2.5vw;
+}
+h2 {
+  font-size: 2vw;
+  font-weight: bold;
+  margin: 0;
+}
+h4 {
+  font-size: 1.3vw;
 }

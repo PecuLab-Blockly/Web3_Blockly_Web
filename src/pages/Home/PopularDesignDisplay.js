@@ -87,6 +87,25 @@ function PopularDesignDisplay() {
   const [popularShowArrow, setPopularShowArrow] = useState(false)
   const visibleWorks = 6
   const [popularStartIndex, setPopularStartIndex] = useState(0)
+  const [iconSize, setIconSize] = useState(16) // 預設圖示大小，以 x 為單位
+
+  useEffect(() => {
+    const handleResize = () => {
+      // 根據螢幕寬度或其他相關因素計算圖示大小
+      const screenWidth = window.innerWidth
+      // 計算新的圖示大小，可以根據需求進行調整
+      const newSize = Math.floor(screenWidth / 15000) // 例如將圖示大小設定為螢幕寬度的百分之一
+      setIconSize(newSize)
+    }
+    // 監聽視窗大小變化
+    window.addEventListener('resize', handleResize)
+    // 初始化時觸發一次計算
+    handleResize()
+    // 組件卸載時移除事件監聽
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
 
   const popularHandleMouseEnter = useCallback(() => {
     setPopularShowArrow(true)
@@ -130,7 +149,7 @@ function PopularDesignDisplay() {
         >
           <FontAwesomeIcon
             icon={faChevronRight}
-            size='1x'
+            size={`${iconSize}x`} // 使用動態計算的圖示大小
             style={{ marginRight: '2px', color: 'white' }}
           />
         </div>
@@ -143,7 +162,7 @@ function PopularDesignDisplay() {
         >
           <FontAwesomeIcon
             icon={faChevronLeft}
-            size='1x'
+            size={`${iconSize}x`}
             style={{ marginRight: '2px', color: 'white' }}
           />
         </div>

@@ -19,13 +19,15 @@ function Home() {
           <div className='home_column_one_left'>
             <div className='title'>
               <div className='title_square_one'>
-                <div style={{ marginLeft: '6%', width: '18%' }} className='h2'>
+                <h2 style={{ marginLeft: '6%', width: '18%' }} className='h2'>
                   最近的設計
-                </div>
+                </h2>
               </div>
             </div>
             {/* 最近設計-作品區域 */}
-            <RecentDesignDisplay />
+            <div className='work_display-container'>
+              <RecentDesignDisplay />
+            </div>
           </div>
           {/* 右上方的兩個按鈕 */}
           <div className='home_column_one_right'>
@@ -53,12 +55,14 @@ function Home() {
         <div className='home_column two'>
           <div className='title'>
             <div className='title_square'>
-              <div style={{ marginLeft: '4%', width: '10%' }} className='h2'>
+              <h2 style={{ marginLeft: '4%', width: '10%' }} className='h2'>
                 熱門項目
-              </div>
+              </h2>
             </div>
           </div>
-          <PopularDesignDisplay />
+          <div className='work_display-container'>
+            <PopularDesignDisplay />
+          </div>
         </div>
       </div>
     </div>
