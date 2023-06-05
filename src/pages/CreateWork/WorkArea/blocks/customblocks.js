@@ -111,3 +111,13 @@ Blockly.Blocks['draw_shapes'] = {
     this.jsonInit(drawShapes)
   }
 }
+
+Blockly.Blocks['text_line_break'] = {
+  init: function() {
+    this.appendDummyInput().appendField('line break')
+    this.setOutput(true, null)
+    this.setColour(160)
+    this.setTooltip('換行')
+    this.setHelpUrl('')
+  }
+}

@@ -96,6 +96,7 @@ function WorkArea(props) {
         <Category name='Text'>
           <Block type='text' />
           <Block type='text_join' />
+          <Block type="text_line_break" />
           <Block type='text_append' />
           <Block type='text_length' />
           <Block type='text_isEmpty' />

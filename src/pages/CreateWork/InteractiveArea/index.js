@@ -36,9 +36,32 @@ const InteractiveArea = ({ codeResult }) => {
     text.setAttribute('y', heightRef.current / 10)
     text.setAttribute('font-size', '20px')
     text.setAttribute('fill', 'black')
-    text.textContent = result
+
+    var line = result.split('\n')
+    for (var i = 0; i < line.length; i++) {
+      var tspan = document.createElementNS(
+        'http://www.w3.org/2000/svg',
+        'tspan'
+      )
+      tspan.setAttribute('x', widthRef.current / 40)
+      tspan.setAttribute('dy', '1em')
+      tspan.textContent = line[i]
+      text.appendChild(tspan)
+    }
+
     svg.appendChild(text)
   }
+
+  // function drawResultText(result) {
+  //   var svg = canvasRef.current
+  //   var text = document.createElementNS('http://www.w3.org/2000/svg', 'text')
+  //   text.setAttribute('x', widthRef.current / 40)
+  //   text.setAttribute('y', heightRef.current / 10)
+  //   text.setAttribute('font-size', '20px')
+  //   text.setAttribute('fill', 'black')
+  //   text.textContent = result
+  //   svg.appendChild(text)
+  // }
 
   useEffect(() => {
     const svg = canvasRef.current

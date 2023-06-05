@@ -1,0 +1,153 @@
+@import '../../../../default.scss';
+
+// StepsToNFT.scss
+
+// 共用
+.data-container {
+  height: 90%;
+  width: 100%;
+  // background-color: aqua;
+  padding: 20px;
+}
+
+.to-NFT-Title {
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.to-NFT-Subtitle {
+  font-size: 16px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+// Step1
+.input-box {
+  width: 95%;
+  border-radius: 10px;
+  border: 1px solid #908e8e;
+}
+
+// Step2
+.upload-container {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+}
+
+.uploadtoNFT {
+  display: flex;
+  padding: 20px;
+  width: 80%;
+  height: 100%;
+  background-color: #ffffff;
+  color: $yellow;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border: 1px solid #908e8e;
+
+  &:hover {
+    color: rgba($color: $yellow, $alpha: 0.8);
+  }
+}
+
+.show-NFT-image img {
+  width: 90%;
+  height: auto;
+}
+
+.show-NFT-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.image-name {
+  font-size: 12px;
+  outline: none;
+  margin-top: 5px;
+  box-sizing: border-box;
+  border-bottom: 0.5px solid white;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// Step3
+.ready-to-NFT {
+  display: flex;
+  // background-color: brown;
+  flex-direction: column;
+  align-items: center;
+  gap: 5%;
+}
+
+.ready-to-NFT button {
+  height: 40px;
+  margin: 5px;
+  background-color: $red;
+  font-weight: bolder;
+}
+
+.ready-to-NFT button:hover {
+  background-color: $red-hover;
+}
+
+.sucess-to-NFT {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+  margin-bottom: 3%;
+}
+
+.sucess-to-NFT h2 {
+  color: $yellow;
+  margin-bottom: 1%;
+}
+
+.icon-inbox-success {
+  color: $red;
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 40px;
+  box-shadow: 0 0 10px 3px rgba(248, 102, 118, 0.2);
+  margin-bottom: 10px;
+}
+
+.NFT-code {
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.NFT-code a {
+  font-size: 1.5vw;
+  &:hover {
+    border-bottom: 3px solid #ffc9cf;
+  }
+}
+
+.NFT-code button {
+  color: $red;
+  background-color: transparent;
+}
+
+.copy-message {
+  background-color: $yellow;
+  padding: 5px 5px;
+  border-radius: 4px;
+
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+}
