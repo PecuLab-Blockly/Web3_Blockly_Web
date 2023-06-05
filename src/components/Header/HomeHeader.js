@@ -9,8 +9,33 @@ import {
   faCog
 } from '@fortawesome/free-solid-svg-icons'
 import React from 'react'
+import { editableInputTypes } from '@testing-library/user-event/dist/utils'
+
+
+
 
 function Header() {
+  const [address, setAddress] = useState(undefined)
+
+  async function connectWallet() {
+  
+    if (typeof window.ethereum !== 'undefined') {
+      try {
+        const addressArray = await window.ethereum.request({method: 'eth_requestAccounts'})
+        console.log(addressArray)
+        setAddress(addressArray[0])
+        return {
+          status: 'Connected',
+          address: addressArray[0]
+        }
+      } catch (err) {
+        return {
+          address: '',
+          status: 'Error'
+        }
+      }
+    } 
+  }
   const [showMemberMenu, setShowMemberMenu] = useState(false)
 
   const handleMemberMenuHover = () => {
@@ -58,7 +83,7 @@ function Header() {
               size='1x'
               // style={{ marginRight: '3px', marginTop: '8px' }}
             />
-            <a href='#'>connencting to wallet</a>
+            <a id='wallet-btn' onClick={connectWallet}>{address ? address : 'Connect Wallet'}</a>
             {showMemberMenu && (
               <ul className='member-dropdown'>
                 <div>
